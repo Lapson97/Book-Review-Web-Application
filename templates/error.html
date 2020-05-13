@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <br>
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Oops! Error occured!</h4>
+        <p>
+            {{ error_message }}
+        </p>
+    </div>
+{% endblock %}

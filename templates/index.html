@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="text-center">
+        <h1>Book Review</h1>
+    </div>
+
+    {% if status == "Loggedout" %}
+        <div class="text-center">
+            <p>If you are a registered user click below!</p>
+            <a class="nav-link " href='{{ url_for('login') }}' xmlns="http://www.w3.org/1999/html">
+               Login
+            </a>
+            <p>If you haven't created account yet, click below!</p>
+            <a class="nav-link " href='{{ url_for('register') }}' xmlns="http://www.w3.org/1999/html">
+               Register
+            </a>
+        </div>
+    {% else %}
+            <a class="nav-link" href="{{ url_for("logout") }}">
+                Logout <strong>{{ user_email }}</strong>
+            </a>
+    {% endif %}
+{% endblock %}
