@@ -1,0 +1,25 @@
+body {
+    background-color: #30FF30;
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+  }
+
+.header {
+  font-size: 100px;
+}
+
+.namename {
+  background-color: red;
+}
+
+.test {
+  background-color: red;
+}
+
+.intro {
+  margin-right: 15%;
+  margin-left: 15%;
+  float: left;
+}
+
