@@ -1,15 +1,20 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <a class="nav-link " href='{{ url_for('login') }}'>
-        Logout <strong>{{ user_email }}</strong>
-    </a>
-
+    <div class="sticky-top">
+        <div class="text-right">
+            <a class="nav-link" href="{{ url_for('logout') }}">
+                Logout <strong>{{ user_email }}</strong>
+            </a>
+        </div>
+    </div>
+    <div style="margin-top: 15%;">
+    <div class="text-center">
     <h1>Search A Book</h1>
     <form action="{{ url_for('booklist') }}" method="post">
-
+        <div style="width: 40%; margin-left: 30%;">
         <div class="form-group">
-            <label for="SearchType">Search By:</label>
+            <label for="SearchType" class="text-left">Search By:</label>
             <select class="form-control" name="book_column" id="SearchType">
                     <option value="isbn">ISBN</option>
                     <option value="title">Title</option>
@@ -21,11 +26,14 @@
         <div class="form-group">
             <input class="form-control" name="query" placeholder="Search">
         </div>
+    </div>
 
         <div class="form-group">
             <button class="btn btn-primary" type="submit">Search</button>
         </div>
 
     </form>
+</div>
+</div>
 
 {% endblock %}

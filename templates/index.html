@@ -1,24 +1,43 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <div class="text-center">
-        <h1>Book Review</h1>
-    </div>
-
-    {% if status == "Loggedout" %}
-        <div class="text-center">
-            <p>If you are a registered user click below!</p>
-            <a class="nav-link " href='{{ url_for('login') }}' xmlns="http://www.w3.org/1999/html">
-               Login
-            </a>
-            <p>If you haven't created account yet, click below!</p>
-            <a class="nav-link " href='{{ url_for('register') }}' xmlns="http://www.w3.org/1999/html">
-               Register
-            </a>
-        </div>
-    {% else %}
-            <a class="nav-link" href="{{ url_for("logout") }}">
+    <div class="sticky-top">
+        <div class="text-right">
+            <a class="nav-link" href="{{ url_for('logout') }}">
                 Logout <strong>{{ user_email }}</strong>
             </a>
+        </div>
+    </div>
+    <div class="text-center">
+        <div class="header">
+            Book Review
+        </div>
+        <div class="intro">
+            <img src="/static/book.png" style="text-align: left;">
+            <p style="float: left;">
+            On this service you will be able to search for 5000 books reviews and ratings as well as add your opinions and provide your own grades for books. Register now if you haven't done it yet or simply log in!
+            </p>
+        <br style="clear: both;">
+        </div>
+    </div>
+
+    
+
+    {% if status == "Loggedout" %}
+    
+    <div class="text-center">
+                <a class="btn btn-primary" href="{{ url_for('login') }}">Login</a>
+        <p>If you haven't created account yet, click below!</p>
+                <a class="btn btn-primary" href="{{ url_for('register') }}">Register</a>
+    </div>
+
+    {% else %}
+    <div class="text-center">
+        <p>You are logged in!</p> 
+                <a class="btn btn-primary" href="{{ url_for('search') }}" method="get">Search for books!</a>
+    </div>
+
+
     {% endif %}
+    
 {% endblock %}

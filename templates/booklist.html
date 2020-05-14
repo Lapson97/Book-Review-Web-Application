@@ -1,9 +1,15 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <a class="nav-link" href="{{ url_for('logout') }}">
-        Logout <strong>{{ user_email }}</strong>
-    </a>
+    <div class="sticky-top">
+        <div class="text-right">
+            <a class="nav-link" href="{{ url_for('logout') }}">
+                Logout <strong>{{ user_email }}</strong>
+            </a>
+        </div>
+    </div>
+
+    <div class="text-center">
     {% if message %}
 
         <div class="alert alert-danger" role="alert">
@@ -26,4 +32,5 @@
         </a>
     </ul>
     {% endfor %}
+    </div>
 {% endblock %}

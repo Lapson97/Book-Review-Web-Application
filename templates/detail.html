@@ -1,9 +1,13 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <a class="nav-link" href="{{ url_for('logout') }}">
-        Logout <strong>{{ user_email }}</strong>
-    </a>
+    <div class="sticky-top">
+        <div class="text-right">
+            <a class="nav-link" href="{{ url_for('logout') }}">
+                Logout <strong>{{ user_email }}</strong>
+            </a>
+        </div>
+    </div>
 
     <h1>Book Details:</h1>
     <p>
@@ -51,5 +55,6 @@
             <button class="btn btn-primary" type="submit">Submit</button>
         </div>
     </form>
+    
 
 {% endblock %}
